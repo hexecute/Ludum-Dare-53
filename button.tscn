@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://enrba3mw36oo"]
+
+[ext_resource type="Script" path="res://Button.gd" id="1_70hc2"]
+
+[sub_resource type="Gradient" id="Gradient_1yejt"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.894118, 1, 0.0901961, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4nmd1"]
+gradient = SubResource("Gradient_1yejt")
+width = 128
+height = 128
+
+[node name="Button" type="Node2D"]
+script = ExtResource("1_70hc2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_4nmd1")

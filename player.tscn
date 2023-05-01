@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://player.gd" id="1_63phq"]
 
-[sub_resource type="Gradient" id="Gradient_bh0c3"]
+[sub_resource type="Gradient" id="Gradient_rcqmt"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0, 1, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_d8pge"]
-gradient = SubResource("Gradient_bh0c3")
+gradient = SubResource("Gradient_rcqmt")
 width = 128
 height = 128
 
