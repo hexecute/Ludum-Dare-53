@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://vgpcomlc5g06"]
+
+[ext_resource type="Script" path="res://Gameplay.gd" id="1_16ftn"]
+[ext_resource type="PackedScene" uid="uid://cf06txq0uxxf0" path="res://map_1.tscn" id="2_pcn15"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_16ftn")
+map_scene = ExtResource("2_pcn15")
