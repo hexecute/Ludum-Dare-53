@@ -4,27 +4,38 @@ extends Node2D
 
 const open_tile_id = 3
 const wall_tile_id = 4
-const cell_size = 128
 
 var player
 var tile_map
+var stack = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	tile_map = map_scene.instantiate()
 	add_child(tile_map)
 	player = tile_map.get_node('Player')
-	set_player_position(Vector2i(0, 0))
+	player.set_coords(Vector2i(0, 0))
 
-func get_player_position():
-	return Vector2i(floor(player.position.x/cell_size), floor(player.position.y/cell_size))
-
-func set_player_position(coords: Vector2i):
-	player.position.x = coords.x*cell_size + cell_size/2
-	player.position.y = coords.y*cell_size + cell_size/2
+func get_map_objects():
+	var l = []
+	for child in tile_map.get_children():
+		if !(child is MapObject):
+			continue
+		l.push_back(child)
+	return l
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Input.is_action_just_pressed("undo"):
+		if len(stack) == 0:
+			print("can't undo, stack is already empty")
+			return
+		var states = stack[-1]
+		stack.pop_back()
+		for node_path in states:
+			get_node(node_path).restore(states[node_path])
+		return
+	
 	var proposed_action = false
 	var target: Vector2i
 	
@@ -44,9 +55,22 @@ func _process(delta):
 	if !proposed_action:
 		return
 	
-	var dst = get_player_position() + target
+	var dst = player.get_coords() + target
 	var dst_tile_id = tile_map.get_cell_source_id(0, dst)
 	if dst_tile_id == wall_tile_id:
 		return
 	
-	set_player_position(dst)
+	# See if any children want to prevent the movement.
+	for child in get_map_objects():
+		if !child.can_move(dst):
+			print("child ", child, " prevents movement to ", dst)
+			return
+	
+	# Collect new states.
+	var states = {}
+	for child in get_map_objects():
+		var state = child.step(dst)
+		states[child.get_path()] = state
+	stack.push_back(states)
+	
+	player.set_coords(dst)

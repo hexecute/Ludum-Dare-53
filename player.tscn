@@ -1,7 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bh70bvbrq8uc7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpc6v"]
-size = Vector2(128, 128)
+[ext_resource type="Script" path="res://player.gd" id="1_63phq"]
 
 [sub_resource type="Gradient" id="Gradient_bh0c3"]
 offsets = PackedFloat32Array(0)
@@ -12,12 +11,8 @@ gradient = SubResource("Gradient_bh0c3")
 width = 128
 height = 128
 
-[node name="Player" type="Area2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_vpc6v")
+[node name="Player" type="Node2D"]
+script = ExtResource("1_63phq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_d8pge")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
