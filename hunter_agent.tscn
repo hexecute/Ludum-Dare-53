@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://di8j6meebw1d6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3d7g2"]
+size = Vector2(128, 128)
+
+[sub_resource type="Gradient" id="Gradient_w8anm"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rrvpe"]
+gradient = SubResource("Gradient_w8anm")
+width = 128
+height = 128
+fill_from = Vector2(0.422018, 0.5)
+
+[node name="HunterAgent" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3d7g2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_rrvpe")

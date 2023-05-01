@@ -19,5 +19,3 @@ shape = SubResource("RectangleShape2D_vpc6v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_d8pge")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
