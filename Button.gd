@@ -5,4 +5,3 @@ extends MapObject
 func step(pos):
 	if pos == get_coords():
 		target.unlock()
-	return null

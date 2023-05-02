@@ -3,15 +3,21 @@ extends Node2D
 
 const cell_size = 128
 
+# Returns whether this object prevents the player from moving to pos.
 func can_move(pos: Vector2i):
 	return true
 
-# Returns the state of this object after the player moves to pos.
+# Updates the state of this object and any objects it impacts,
+# given player movement to pos.
 func step(pos: Vector2i):
+	pass
+
+# Returns the state of this object.
+func get_state():
 	return null
 
 # Restores a previous state of this object.
-func restore(state):
+func set_state(state):
 	pass
 
 func get_coords():

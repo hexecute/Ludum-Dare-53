@@ -1,7 +1,7 @@
 extends MapObject
 
-func step(pos: Vector2i):
+func get_state():
 	return get_coords()
 
-func restore(coords):
+func set_state(coords):
 	set_coords(coords)

@@ -33,7 +33,7 @@ func _process(delta):
 		var states = stack[-1]
 		stack.pop_back()
 		for node_path in states:
-			get_node(node_path).restore(states[node_path])
+			get_node(node_path).set_state(states[node_path])
 		return
 	
 	var proposed_action = false
@@ -51,6 +51,9 @@ func _process(delta):
 	elif Input.is_action_just_pressed("move_down"):
 		target = Vector2i(0, 1)
 		proposed_action = true
+	elif Input.is_action_just_pressed("pause"):
+		target = Vector2i(0, 0)
+		proposed_action = true
 	
 	if !proposed_action:
 		return
@@ -66,11 +69,17 @@ func _process(delta):
 			print("child ", child, " prevents movement to ", dst)
 			return
 	
-	# Collect new states.
+	print("player moves to ", dst)
+	
+	# Collect and save pre-change states.
 	var states = {}
 	for child in get_map_objects():
-		var state = child.step(dst)
+		var state = child.get_state()
 		states[child.get_path()] = state
 	stack.push_back(states)
+	
+	# Update children.
+	for child in get_map_objects():
+		child.step(dst)
 	
 	player.set_coords(dst)
