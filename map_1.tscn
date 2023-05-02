@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf06txq0uxxf0"]
+[gd_scene load_steps=7 format=3 uid="uid://cf06txq0uxxf0"]
 
 [ext_resource type="TileSet" uid="uid://b1d4b5y6wx51x" path="res://map_1.tres" id="1_gmibu"]
 [ext_resource type="PackedScene" uid="uid://bk2cfchsf83wt" path="res://door.tscn" id="3_fgv8i"]
 [ext_resource type="PackedScene" uid="uid://bh70bvbrq8uc7" path="res://player.tscn" id="3_l6d06"]
 [ext_resource type="PackedScene" uid="uid://enrba3mw36oo" path="res://button.tscn" id="4_cy1ip"]
+[ext_resource type="PackedScene" uid="uid://bhwxau62q4jox" path="res://package.tscn" id="5_c73kq"]
+[ext_resource type="PackedScene" uid="uid://bbsa4y6y1yxrt" path="res://goal.tscn" id="6_5jvlb"]
 
 [node name="Map1" type="TileMap"]
 tile_set = ExtResource("1_gmibu")
@@ -21,3 +23,10 @@ position = Vector2(-576, 320)
 [node name="Button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_cy1ip")]
 position = Vector2(448, 320)
 target = NodePath("../Door1")
+
+[node name="Package" parent="." node_paths=PackedStringArray("goal") instance=ExtResource("5_c73kq")]
+position = Vector2(-704, 320)
+goal = NodePath("../Goal")
+
+[node name="Goal" parent="." instance=ExtResource("6_5jvlb")]
+position = Vector2(64, -64)

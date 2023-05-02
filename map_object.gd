@@ -6,11 +6,17 @@ const cell_size = 128
 # Returns whether this object prevents the player from moving to pos.
 func can_move(pos: Vector2i):
     return true
+    
+# Returns true unless this object has an unsatisfied win condition.
+func can_win():
+    return true
 
 # Updates the state of this object and any objects it impacts,
-# given player movement to pos.
-func step(pos: Vector2i):
+# given player movement to pos, and whether player is interacting on this step.
+func step(pos: Vector2i, interact: bool):
     pass
+
+
 
 # Returns the state of this object.
 func get_state():

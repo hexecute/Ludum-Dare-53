@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Door.gd" id="1_t1l3n"]
 
-[sub_resource type="Gradient" id="Gradient_7yxto"]
+[sub_resource type="Gradient" id="Gradient_171lv"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(1, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_fmvsx"]
-gradient = SubResource("Gradient_7yxto")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dm06o"]
+gradient = SubResource("Gradient_171lv")
 width = 128
 height = 128
 
@@ -15,4 +15,4 @@ height = 128
 script = ExtResource("1_t1l3n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_fmvsx")
+texture = SubResource("GradientTexture2D_dm06o")

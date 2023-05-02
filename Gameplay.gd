@@ -37,7 +37,8 @@ func _process(delta):
         return
     
     var proposed_action = false
-    var target: Vector2i
+    var target = Vector2i(0, 0)
+    var interact = false
     
     if Input.is_action_just_pressed("move_left"):
         target = Vector2i(-1, 0)
@@ -52,7 +53,9 @@ func _process(delta):
         target = Vector2i(0, 1)
         proposed_action = true
     elif Input.is_action_just_pressed("pause"):
-        target = Vector2i(0, 0)
+        proposed_action = true
+    elif Input.is_action_just_pressed("interact"):
+        interact = true
         proposed_action = true
     
     if !proposed_action:
@@ -80,6 +83,13 @@ func _process(delta):
     
     # Update children.
     for child in get_map_objects():
-        child.step(dst)
+        child.step(dst, interact)
     
     player.set_coords(dst)
+    
+    # Check win condition.
+    var can_win = true
+    for child in get_map_objects():
+        can_win = can_win && child.can_win()
+    if can_win:
+        print("win!")
