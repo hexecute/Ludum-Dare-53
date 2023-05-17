@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbnn5m81cqnoi"]
+[gd_scene load_steps=5 format=3 uid="uid://bbnn5m81cqnoi"]
 
+[ext_resource type="Texture2D" uid="uid://bua5lnqf7u4eg" path="res://assets/crumpled-paper.png" id="1_2xat7"]
 [ext_resource type="FontFile" uid="uid://cu2tmhg1ywhjj" path="res://assets/fonts/Tinos-Bold.ttf" id="1_anpia"]
 [ext_resource type="Texture2D" uid="uid://deq03tvw84iu2" path="res://assets/main_menu_image.png" id="2_5y0hg"]
 [ext_resource type="FontFile" uid="uid://c57uobgcv5avy" path="res://assets/fonts/Tinos-Regular.ttf" id="2_14vt5"]
@@ -12,14 +13,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BackgroundColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.921569, 0.921569, 0.921569, 1)
+[node name="Crumpled-paper" type="Sprite2D" parent="."]
+position = Vector2(768, 466)
+scale = Vector2(1.10192, 1.10192)
+texture = ExtResource("1_2xat7")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
