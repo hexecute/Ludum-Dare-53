@@ -1,0 +1,147 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbnn5m81cqnoi"]
+
+[ext_resource type="FontFile" uid="uid://cu2tmhg1ywhjj" path="res://assets/fonts/Tinos-Bold.ttf" id="1_anpia"]
+[ext_resource type="Texture2D" uid="uid://deq03tvw84iu2" path="res://assets/main_menu_image.png" id="2_5y0hg"]
+[ext_resource type="FontFile" uid="uid://c57uobgcv5avy" path="res://assets/fonts/Tinos-Regular.ttf" id="2_14vt5"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.921569, 0.921569, 0.921569, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 54
+theme_override_constants/margin_right = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CenterContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_anpia")
+theme_override_font_sizes/font_size = 118
+text = "PAPIER BOY"
+
+[node name="TopBarColorRect2" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = 60.0
+offset_top = 25.0
+offset_right = 1220.0
+offset_bottom = 35.0
+color = Color(0, 0, 0, 1)
+
+[node name="TopBarColorRect3" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = 60.0
+offset_top = 83.0
+offset_right = 1220.0
+offset_bottom = 93.0
+color = Color(0, 0, 0, 1)
+
+[node name="TopBarColorRect4" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = 59.0
+offset_top = 217.0
+offset_right = 1219.0
+offset_bottom = 227.0
+color = Color(0, 0, 0, 1)
+
+[node name="XDJText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 39.0
+offset_right = 275.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_anpia")
+theme_override_font_sizes/font_size = 36
+text = "XDJ Games"
+
+[node name="LudumDareText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 39.0
+offset_right = 1211.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_anpia")
+theme_override_font_sizes/font_size = 36
+text = "Ludum Dare 53"
+
+[node name="Image" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.74902)
+layout_mode = 0
+offset_left = 714.0
+offset_top = 267.0
+offset_right = 1343.0
+offset_bottom = 896.0
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("2_5y0hg")
+
+[node name="FlavorText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 341.0
+offset_right = 654.0
+offset_bottom = 737.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_14vt5")
+text = "Pierre was a diligent and hardworking boy of thirteen, living in a small town called Willowbrook. Every morning, before the sun even rose, he would pedal his trusty bicycle through the quiet streets, carrying a bag full of newspapers. Pierre was known as the town's reliable paper delivery boy.
+
+With his unruly mop of brown hair and bright blue eyes, Pierre greeted each day with a smile. He loved the feeling of the wind against his face as he raced through the deserted lanes, delivering newspapers to the residents of Willowbrook. Rain or shine, Pierre would never miss a day. He took pride in his responsibility and saw it as a way to contribute to the community.
+
+
+
+One crisp morning, as Pierre pedaled along his usual route, he noticed a crumpled piece of paper lying on the sidewalk. Curiosity got the better of him, and he stopped to pick it up. It was a hand-drawn map, with a big X marking a spot in the nearby forest. Pierre's eyes lit up with excitement, and he couldn't resist the urge to uncover the – secret hidden within."
+autowrap_mode = 2
+
+[node name="StartLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 256.0
+offset_right = 605.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_anpia")
+theme_override_font_sizes/font_size = 72
+text = "START GAME"
+
+[node name="QuitLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 551.0
+offset_right = 513.0
+offset_bottom = 635.0
+pivot_offset = Vector2(161, 64)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_anpia")
+theme_override_font_sizes/font_size = 72
+text = "QUIT
+"

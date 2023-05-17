@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://nj0apn0eg0yq"]
+
+[ext_resource type="Texture2D" uid="uid://bv56xfkrujw4y" path="res://assets/xdj_logo.png" id="1_lhd4f"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="XdjLogo" type="Sprite2D" parent="CenterContainer"]
+position = Vector2(512, 520)
+texture = ExtResource("1_lhd4f")
