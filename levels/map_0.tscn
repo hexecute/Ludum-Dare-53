@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0hx8cbrrabij"]
+[gd_scene load_steps=10 format=3 uid="uid://dci3d3xvmu38n"]
 
 [ext_resource type="TileSet" uid="uid://b1d4b5y6wx51x" path="res://level_design/map_1.tres" id="1_sdaro"]
 [ext_resource type="Script" path="res://level_design/Gameplay.gd" id="2_puwbn"]
 [ext_resource type="PackedScene" uid="uid://bh70bvbrq8uc7" path="res://level_design/player.tscn" id="4_8afjd"]
 [ext_resource type="PackedScene" uid="uid://bk2cfchsf83wt" path="res://level_design/door.tscn" id="5_n4rdc"]
-[ext_resource type="PackedScene" uid="uid://d0ckyenffdfr5" path="res://level_design/custom_button.tscn" id="6_uquiw"]
+[ext_resource type="PackedScene" path="res://level_design/custom_button.tscn" id="6_uquiw"]
 [ext_resource type="PackedScene" uid="uid://bhwxau62q4jox" path="res://level_design/package.tscn" id="7_7p8d6"]
 [ext_resource type="PackedScene" path="res://level_design/goal.tscn" id="8_cavx5"]
 [ext_resource type="PackedScene" uid="uid://dcqfnkiv8p2l7" path="res://level_design/drone.tscn" id="9_jcrjc"]
