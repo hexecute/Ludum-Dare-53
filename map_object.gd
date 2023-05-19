@@ -10,13 +10,19 @@ func can_move(pos: Vector2i):
 # Returns true unless this object has an unsatisfied win condition.
 func can_win():
     return true
+    
+# Returns false unless this object has an unsatisfied loss condition.
+func can_lose():
+    return false
 
 # Updates the state of this object and any objects it impacts,
 # given player movement to pos, and whether player is interacting on this step.
 func step(pos: Vector2i, interact: bool):
     pass
-
-
+    
+# Update the state of this object (for automated objects)
+func automatic_action(map: Node, player_pos: Vector2i):
+    pass
 
 # Returns the state of this object.
 func get_state():
@@ -32,3 +38,4 @@ func get_coords():
 func set_coords(coords: Vector2i):
     position.x = coords.x*cell_size + cell_size/2
     position.y = coords.y*cell_size + cell_size/2
+    
