@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbsa4y6y1yxrt"]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="Script" path="res://Goal.gd" id="1_yawi4"]
+[ext_resource type="Script" path="res://level_design/Goal.gd" id="1_yawi4"]
 
 [sub_resource type="Gradient" id="Gradient_dl1oo"]
 interpolation_mode = 1

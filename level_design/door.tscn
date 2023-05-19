@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bk2cfchsf83wt"]
 
-[ext_resource type="Script" path="res://Door.gd" id="1_t1l3n"]
+[ext_resource type="Script" path="res://level_design/Door.gd" id="1_t1l3n"]
 
 [sub_resource type="Gradient" id="Gradient_171lv"]
 offsets = PackedFloat32Array(0)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://enrba3mw36oo"]
 
-[ext_resource type="Script" path="res://Button.gd" id="1_70hc2"]
+[ext_resource type="Script" path="res://level_design/Button.gd" id="1_70hc2"]
 
 [sub_resource type="Gradient" id="Gradient_1yejt"]
 offsets = PackedFloat32Array(0)

@@ -1,6 +1,6 @@
 extends Node2D
 
-var utils = preload("res://Utils.gd")
+var utils = preload("res://level_design/Utils.gd")
 
 var player
 var tile_map

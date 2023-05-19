@@ -3,7 +3,7 @@ extends Enemy
 
 @export var behavior: Array[Vector2i]
 
-var utils = preload("res://Utils.gd")
+var utils = preload("res://level_design/Utils.gd")
 
 var i = 0
 

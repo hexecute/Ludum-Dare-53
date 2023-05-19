@@ -1,7 +1,7 @@
 class_name Chaser
 extends Enemy
 
-var utils = preload("res://Utils.gd")
+var utils = preload("res://level_design/Utils.gd")
 
 func automatic_action(map: Node, player_pos: Vector2i):
     var agent_pos = get_state()
