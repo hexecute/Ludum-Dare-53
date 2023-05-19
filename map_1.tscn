@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" path="res://drone.tscn" id="9_60gn3"]
 
 [node name="Map1" type="TileMap"]
-position = Vector2(-87, -166)
+position = Vector2(-128, -128)
 scale = Vector2(0.5, 0.5)
 tile_set = ExtResource("1_gmibu")
 format = 2
@@ -20,11 +20,10 @@ script = ExtResource("2_j0014")
 
 [node name="Chaser" parent="." instance=ExtResource("2_xwjrn")]
 z_index = 1
-position = Vector2(1254, 230)
-start_pos = Vector2i(5, 5)
+position = Vector2(-832, 448)
 
 [node name="Player" parent="." instance=ExtResource("3_l6d06")]
-position = Vector2(0, 50)
+position = Vector2(64, 64)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(538, 456)
@@ -33,12 +32,9 @@ offset = Vector2(-256, -256)
 [node name="Door1" parent="." instance=ExtResource("3_fgv8i")]
 position = Vector2(-576, 320)
 
-[node name="Button" parent="." instance=ExtResource("4_cy1ip")]
+[node name="Button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_cy1ip")]
 position = Vector2(448, 320)
-
-[node name="Package" parent="." node_paths=PackedStringArray("goal") instance=ExtResource("5_c73kq")]
-position = Vector2(-704, 320)
-goal = NodePath("../Goal")
+target = NodePath("../Door1")
 
 [node name="Goal" parent="." instance=ExtResource("6_5jvlb")]
 position = Vector2(63, -65)
@@ -46,5 +42,8 @@ position = Vector2(63, -65)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Drone" parent="." instance=ExtResource("9_60gn3")]
-position = Vector2(1250, 382)
-start_pos = Vector2i(0, -6)
+position = Vector2(64, -704)
+
+[node name="Package" parent="." node_paths=PackedStringArray("goal") instance=ExtResource("5_c73kq")]
+position = Vector2(-704, 320)
+goal = NodePath("../Goal")

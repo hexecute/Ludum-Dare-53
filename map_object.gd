@@ -38,4 +38,7 @@ func get_coords():
 func set_coords(coords: Vector2i):
     position.x = coords.x*cell_size + cell_size/2
     position.y = coords.y*cell_size + cell_size/2
-    
+
+# Precedence controlling order that objects are updated.
+func get_precedence():
+    return 0

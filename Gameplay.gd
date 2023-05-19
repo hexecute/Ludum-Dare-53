@@ -14,7 +14,6 @@ func _ready():
     tile_map = map_scene.instantiate()
     add_child(tile_map)
     player = tile_map.get_node('Player')
-    player.set_coords(Vector2i(0, 0))
 
 func get_map_objects():
     var l = []
@@ -22,6 +21,7 @@ func get_map_objects():
         if !(child is MapObject):
             continue
         l.push_back(child)
+    l.sort_custom(func(a, b): return a.get_precedence() < b.get_precedence())
     return l
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -85,8 +85,6 @@ func _process(delta):
     # Update automated children
     for child in get_map_objects():
         child.automatic_action(tile_map, dst)
-        
-    player.set_coords(dst)    
     
     # Check win condition.
     var can_win = true

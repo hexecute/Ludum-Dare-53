@@ -3,11 +3,8 @@ extends MapObject
 
 var tile_map
 
-@export var start_pos: Vector2i
-
 func _ready():
     tile_map = get_parent()
-    set_state(start_pos)
 
 func get_state():
     return get_coords()
