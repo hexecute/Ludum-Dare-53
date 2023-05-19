@@ -1,19 +1,5 @@
-class_name Drone
-extends MapObject
-
-var tile_map
-
-func _ready():
-    tile_map = get_parent()
-
-func get_state():
-    return get_coords()
-
-func set_state(coords):
-    set_coords(coords)
-
-func can_lose():
-    return get_coords() == tile_map.get_node('Player').get_coords()
+class_name Chaser
+extends Enemy
 
 func automatic_action(map: Node, player_pos: Vector2i):
     var agent_pos = get_state()
@@ -28,16 +14,25 @@ func automatic_action(map: Node, player_pos: Vector2i):
     var dst: Vector2i
     var dst_tile_id
 
-    var blocked = true
+    var will_move = false
     if distance_diff[0] != 0:
         target = Vector2i(distance_diff[0], 0)
         dst = get_state() + target
-    elif blocked and distance_diff[1] != 0:
+        
+        dst_tile_id = map.get_cell_source_id(0, dst)
+        # HX: Use constants
+        if dst_tile_id != 4:
+            will_move = true
+            
+    if not will_move and distance_diff[1] != 0:
         target = Vector2i(0, distance_diff[1])
         dst = get_state() + target
-    dst_tile_id = map.get_cell_source_id(0, dst)
-    # HX: Use constants
-    print(dst)
-    if dst_tile_id != 4:
+        
+        dst_tile_id = map.get_cell_source_id(0, dst)
+        # HX: Use constants
+        if dst_tile_id != 4:
+            will_move = true
+            
+    if will_move:
         set_state(dst)
     
