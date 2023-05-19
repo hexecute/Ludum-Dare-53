@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxarau6cf60mi"]
+[gd_scene load_steps=10 format=3 uid="uid://cf06txq0uxxf0"]
 
 [ext_resource type="TileSet" uid="uid://b1d4b5y6wx51x" path="res://map_1.tres" id="1_gmibu"]
 [ext_resource type="Script" path="res://Drone.gd" id="2_j0014"]
@@ -44,6 +44,5 @@ position = Vector2(63, -65)
 [node name="Drone" parent="." instance=ExtResource("9_60gn3")]
 position = Vector2(64, -704)
 
-[node name="Package" parent="." node_paths=PackedStringArray("goal") instance=ExtResource("5_c73kq")]
+[node name="Package" parent="." instance=ExtResource("5_c73kq")]
 position = Vector2(-704, 320)
-goal = NodePath("../Goal")
