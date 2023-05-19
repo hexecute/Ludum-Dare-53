@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcqfnkiv8p2l7"]
+
+[ext_resource type="Script" path="res://Drone.gd" id="1_bbugg"]
+[ext_resource type="Texture2D" uid="uid://b5opmo7wospwx" path="res://assets/Microsoft_skull.png" id="2_km8op"]
+
+[node name="Drone" type="Node2D"]
+script = ExtResource("1_bbugg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.0472
+scale = Vector2(0.533, 0.533)
+texture = ExtResource("2_km8op")

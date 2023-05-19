@@ -61,7 +61,8 @@ func _process(delta):
     if !proposed_action:
         return
     
-    var dst = player.get_coords() + target
+    var current = player.get_coords()
+    var dst = current + target
     var dst_tile_id = tile_map.get_cell_source_id(0, dst)
     if dst_tile_id == wall_tile_id:
         return
@@ -81,15 +82,23 @@ func _process(delta):
         states[child.get_path()] = state
     stack.push_back(states)
     
-    # Update children.
+    # Update interactable children
     for child in get_map_objects():
         child.step(dst, interact)
-    
-    player.set_coords(dst)
+
+    # Update automated children
+    for child in get_map_objects():
+        child.automatic_action(tile_map, dst)
+        
+    player.set_coords(dst)    
     
     # Check win condition.
     var can_win = true
+    var can_lose = false
     for child in get_map_objects():
+        can_lose = can_lose || child.can_lose()
         can_win = can_win && child.can_win()
-    if can_win:
-        print("win!")
+    if can_lose:
+        print("YOU LOSE!")
+    elif can_win:
+        print("YOU WIN!")
