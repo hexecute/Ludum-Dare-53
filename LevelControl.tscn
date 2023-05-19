@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpydtppvmkxsq"]
+[gd_scene load_steps=5 format=3 uid="uid://cpydtppvmkxsq"]
 
 [ext_resource type="Script" path="res://LevelControl.gd" id="1_cer7y"]
+[ext_resource type="FontFile" uid="uid://cu2tmhg1ywhjj" path="res://assets/fonts/Tinos-Bold.ttf" id="2_6364m"]
 [ext_resource type="FontFile" uid="uid://c57uobgcv5avy" path="res://assets/fonts/Tinos-Regular.ttf" id="2_e5hpo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7otej"]
@@ -36,6 +37,13 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer"]
 layout_mode = 2
+
+[node name="WinLoseLabel" type="Label" parent="PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6364m")
+theme_override_font_sizes/font_size = 90
+text = "YOU WIN"
+horizontal_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
