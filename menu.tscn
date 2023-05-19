@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbnn5m81cqnoi"]
+[gd_scene load_steps=11 format=3 uid="uid://bbnn5m81cqnoi"]
 
 [ext_resource type="Texture2D" uid="uid://bua5lnqf7u4eg" path="res://assets/crumpled-paper.png" id="1_2xat7"]
 [ext_resource type="FontFile" uid="uid://cu2tmhg1ywhjj" path="res://assets/fonts/Tinos-Bold.ttf" id="1_anpia"]
+[ext_resource type="Script" path="res://menu.gd" id="1_sk5gs"]
 [ext_resource type="Texture2D" uid="uid://deq03tvw84iu2" path="res://assets/main_menu_image.png" id="2_5y0hg"]
 [ext_resource type="FontFile" uid="uid://c57uobgcv5avy" path="res://assets/fonts/Tinos-Regular.ttf" id="2_14vt5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ipvoe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5acj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qewl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u1dm5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yme2c"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -12,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sk5gs")
 
 [node name="Crumpled-paper" type="Sprite2D" parent="."]
 position = Vector2(768, 466)
@@ -119,26 +131,57 @@ With his unruly mop of brown hair and bright blue eyes, Pierre greeted each day 
 One crisp morning, as Pierre pedaled along his usual route, he noticed a crumpled piece of paper lying on the sidewalk. Curiosity got the better of him, and he stopped to pick it up. It was a hand-drawn map, with a big X marking a spot in the nearby forest. Pierre's eyes lit up with excitement, and he couldn't resist the urge to uncover the – secret hidden within."
 autowrap_mode = 2
 
-[node name="StartLabel" type="Label" parent="."]
+[node name="StartButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 132.0
-offset_top = 256.0
-offset_right = 605.0
+offset_left = 131.0
+offset_top = 254.0
+offset_right = 604.0
 offset_bottom = 340.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.270588, 0.313726, 0.364706, 0.752941)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.243137, 0.243137, 0.243137, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("1_anpia")
 theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ipvoe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f5acj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3qewl")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u1dm5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yme2c")
 text = "START GAME"
 
-[node name="QuitLabel" type="Label" parent="."]
+[node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 281.0
-offset_top = 551.0
-offset_right = 513.0
-offset_bottom = 635.0
-pivot_offset = Vector2(161, 64)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 138.0
+offset_top = 550.0
+offset_right = 611.0
+offset_bottom = 636.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.270588, 0.313726, 0.364706, 0.752941)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.243137, 0.243137, 0.243137, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("1_anpia")
 theme_override_font_sizes/font_size = 72
-text = "QUIT
-"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ipvoe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f5acj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3qewl")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u1dm5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yme2c")
+text = "QUIT"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

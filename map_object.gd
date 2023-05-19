@@ -16,8 +16,8 @@ func can_lose():
     return false
 
 # Updates the state of this object and any objects it impacts,
-# given player movement to pos, and whether player is interacting on this step.
-func step(pos: Vector2i, interact: bool):
+# given player movement to pos.
+func step(pos: Vector2i):
     pass
     
 # Update the state of this object (for automated objects)
@@ -38,4 +38,7 @@ func get_coords():
 func set_coords(coords: Vector2i):
     position.x = coords.x*cell_size + cell_size/2
     position.y = coords.y*cell_size + cell_size/2
-    
+
+# Precedence controlling order that objects are updated.
+func get_precedence():
+    return 0

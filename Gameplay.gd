@@ -10,8 +10,7 @@ var stack = []
 func _ready():
     tile_map = self
     add_child(tile_map)
-    player = get_node('Player')
-    player.set_coords(Vector2i(0, 0))
+    player = tile_map.get_node('Player')
 
 func get_map_objects():
     var l = []
@@ -19,6 +18,7 @@ func get_map_objects():
         if !(child is MapObject):
             continue
         l.push_back(child)
+    l.sort_custom(func(a, b): return a.get_precedence() < b.get_precedence())
     return l
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,7 +35,6 @@ func _process(delta):
     
     var proposed_action = false
     var target = Vector2i(0, 0)
-    var interact = false
     
     if Input.is_action_just_pressed("move_left"):
         target = Vector2i(-1, 0)
@@ -53,9 +52,9 @@ func _process(delta):
         proposed_action = true
     elif Input.is_action_just_pressed("pause"):
         proposed_action = true
-    elif Input.is_action_just_pressed("interact"):
-        interact = true
-        proposed_action = true
+    elif Input.is_action_just_pressed("ui_cancel"):
+        get_node("LevelControl").show()
+        get_tree().paused = true
     
     if !proposed_action:
         return
@@ -81,15 +80,13 @@ func _process(delta):
         states[child.get_path()] = state
     stack.push_back(states)
     
-    # Update interactable children
+    # Update children.
     for child in get_map_objects():
-        child.step(dst, interact)
+        child.step(dst)
 
     # Update automated children
     for child in get_map_objects():
         child.automatic_action(tile_map, dst)
-
-    player.set_coords(dst)
     
     # Update world
     if dst_tile_id == utils.CRACKED:
