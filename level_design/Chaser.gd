@@ -20,10 +20,16 @@ func automatic_action(map: Node, player_pos: Vector2i):
     if distance_diff[0] != 0:
         target = Vector2i(distance_diff[0], 0)
         dst = get_state() + target
-        
+         
         dst_tile_id = map.get_cell_source_id(0, dst)
         if utils.is_passable(dst_tile_id):
             will_move = true
+            if distance_diff[0] > 0:
+                get_node('Sprite2D').flip_h = false
+                get_node('Sprite2D').rotation = 0
+            else:
+                get_node('Sprite2D').flip_h = true
+                get_node('Sprite2D').rotation = 0
             
     if not will_move and distance_diff[1] != 0:
         target = Vector2i(0, distance_diff[1])
@@ -32,6 +38,12 @@ func automatic_action(map: Node, player_pos: Vector2i):
         dst_tile_id = map.get_cell_source_id(0, dst)
         if utils.is_passable(dst_tile_id):
             will_move = true
-            
+            if distance_diff[1] > 0:
+                get_node('Sprite2D').flip_h = false
+                get_node('Sprite2D').rotation = PI / 2
+            else:
+                get_node('Sprite2D').flip_h = false
+                get_node('Sprite2D').rotation = - PI / 2
+    
     if will_move:
         set_state(dst)

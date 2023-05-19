@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d247njrawpg5o"]
 
 [ext_resource type="Script" path="res://level_design/Chaser.gd" id="1_gm7xa"]
-[ext_resource type="Texture2D" uid="uid://b5opmo7wospwx" path="res://assets/Microsoft_skull.png" id="2_km8op"]
+[ext_resource type="Texture2D" uid="uid://blubpp44lbmtp" path="res://assets/angry_dog.png" id="2_gom01"]
 
 [node name="Chaser" type="Node2D"]
 z_index = 2
@@ -9,6 +9,5 @@ script = ExtResource("1_gm7xa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
-rotation = 1.0472
-scale = Vector2(0.533, 0.533)
-texture = ExtResource("2_km8op")
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("2_gom01")

@@ -1,18 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bk2cfchsf83wt"]
+[gd_scene load_steps=3 format=3 uid="uid://bk2cfchsf83wt"]
 
 [ext_resource type="Script" path="res://level_design/Door.gd" id="1_t1l3n"]
-
-[sub_resource type="Gradient" id="Gradient_171lv"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dm06o"]
-gradient = SubResource("Gradient_171lv")
-width = 128
-height = 128
+[ext_resource type="Texture2D" uid="uid://b1xnm13bmlvi4" path="res://assets/closed_door.png" id="2_kioqi"]
 
 [node name="Door" type="Node2D"]
 script = ExtResource("1_t1l3n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_dm06o")
+scale = Vector2(0.666, 0.666)
+texture = ExtResource("2_kioqi")

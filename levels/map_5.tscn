@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://gru6jdy620lg"]
+
+[ext_resource type="TileSet" uid="uid://b1d4b5y6wx51x" path="res://level_design/map_1.tres" id="1_r4qe8"]
+[ext_resource type="Script" path="res://level_design/Gameplay.gd" id="2_si4xf"]
+[ext_resource type="PackedScene" uid="uid://d247njrawpg5o" path="res://level_design/chaser.tscn" id="3_daqbq"]
+[ext_resource type="PackedScene" uid="uid://cpydtppvmkxsq" path="res://LevelControl.tscn" id="4_4tm2h"]
+[ext_resource type="PackedScene" uid="uid://bh70bvbrq8uc7" path="res://level_design/player.tscn" id="5_c7xfm"]
+[ext_resource type="PackedScene" uid="uid://bhwxau62q4jox" path="res://level_design/package.tscn" id="6_j8xu8"]
+[ext_resource type="PackedScene" uid="uid://psjbvtldv108" path="res://level_design/goal.tscn" id="7_lixs0"]
+[ext_resource type="PackedScene" uid="uid://d0ckyenffdfr5" path="res://level_design/custom_button.tscn" id="8_s6hk6"]
+[ext_resource type="PackedScene" uid="uid://bk2cfchsf83wt" path="res://level_design/door.tscn" id="9_7aqhe"]
+[ext_resource type="PackedScene" uid="uid://dcqfnkiv8p2l7" path="res://level_design/drone.tscn" id="10_x0joh"]
+
+[node name="Map5" type="TileMap"]
+position = Vector2(-127, -128)
+scale = Vector2(0.5, 0.5)
+tile_set = ExtResource("1_r4qe8")
+format = 2
+layer_0/tile_data = PackedInt32Array(-196615, 4, 0, -131079, 4, 0, -65543, 4, 0, -7, 4, 0, 65529, 4, 0, 131065, 4, 0, 196601, 4, 0, 262137, 4, 0, -196614, 4, 0, -131078, 3, 0, -65542, 3, 0, -6, 3, 0, 65530, 4, 0, 131066, 3, 0, 196602, 3, 0, 262138, 3, 0, -196613, 4, 0, -131077, 3, 0, -65541, 3, 0, -5, 3, 0, 65531, 4, 0, 131067, 3, 0, 196603, 3, 0, 262139, 3, 0, -196612, 4, 0, -131076, 3, 0, -65540, 3, 0, -4, 3, 0, 65532, 4, 0, 131068, 3, 0, 196604, 3, 0, 262140, 3, 0, -196611, 4, 0, -131075, 3, 0, -65539, 3, 0, -3, 3, 0, 65533, 4, 0, 131069, 3, 0, 196605, 3, 0, 262141, 3, 0, -196610, 4, 0, -131074, 3, 0, -65538, 4, 0, -2, 3, 0, 65534, 4, 0, 131070, 3, 0, 196606, 3, 0, 262142, 3, 0, -196609, 4, 0, -131073, 3, 0, -65537, 3, 0, -1, 3, 0, 65535, 4, 0, 131071, 3, 0, 196607, 3, 0, 262143, 3, 0, -262144, 4, 0, -196608, 3, 0, -131072, 3, 0, -65536, 3, 0, 0, 4, 0, 65536, 3, 0, 131072, 3, 0, 196608, 3, 0, -262143, 4, 0, -196607, 3, 0, -131071, 3, 0, -65535, 3, 0, 1, 4, 0, 65537, 3, 0, 131073, 4, 0, 196609, 3, 0, -262142, 4, 0, -196606, 3, 0, -131070, 3, 0, -65534, 3, 0, 2, 4, 0, 65538, 3, 0, 131074, 3, 0, 196610, 3, 0, -262141, 4, 0, -196605, 3, 0, -131069, 3, 0, -65533, 3, 0, 3, 4, 0, 65539, 3, 0, 131075, 3, 0, 196611, 3, 0, -262140, 4, 0, -196604, 3, 0, -131068, 3, 0, -65532, 3, 0, 4, 3, 0, 65540, 3, 0, 131076, 3, 0, 196612, 3, 0, -262139, 4, 0, -196603, 3, 0, -131067, 3, 0, -65531, 3, 0, 5, 4, 0, 65541, 3, 0, 131077, 3, 0, 196613, 3, 0, -262138, 4, 0, -196602, 4, 0, -131066, 4, 0, -65530, 4, 0, 6, 4, 0, 65542, 4, 0, 131078, 4, 0, 196614, 4, 0, 327673, 4, 0, 327674, 4, 0, 327675, 4, 0, 327676, 4, 0, 327677, 4, 0, 327678, 4, 0, 327679, 4, 0, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0)
+script = ExtResource("2_si4xf")
+
+[node name="Chaser" parent="." instance=ExtResource("3_daqbq")]
+position = Vector2(-194, 320)
+
+[node name="LevelControl" parent="." instance=ExtResource("4_4tm2h")]
+
+[node name="Player" parent="." instance=ExtResource("5_c7xfm")]
+z_index = 1
+position = Vector2(318, -192)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(538, 456)
+offset = Vector2(-256, -256)
+
+[node name="Package" parent="." node_paths=PackedStringArray("goal") instance=ExtResource("6_j8xu8")]
+z_index = 2
+position = Vector2(574, -320)
+goal = NodePath("../Goal")
+
+[node name="Goal" parent="." instance=ExtResource("7_lixs0")]
+position = Vector2(574, 320)
+
+[node name="Button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("8_s6hk6")]
+position = Vector2(-578, 320)
+target = NodePath("../Door")
+
+[node name="Door" parent="." instance=ExtResource("9_7aqhe")]
+position = Vector2(574, 64)
+
+[node name="Drone" parent="." instance=ExtResource("10_x0joh")]
+position = Vector2(-322, 192)
+behavior = Array[Vector2i]([Vector2i(1, 0), Vector2i(1, 0), Vector2i(-1, 0), Vector2i(-1, 0)])
+
+[node name="Drone2" parent="." instance=ExtResource("10_x0joh")]
+position = Vector2(62, 192)
+behavior = Array[Vector2i]([Vector2i(-1, 0), Vector2i(-1, 0), Vector2i(1, 0), Vector2i(1, 0)])
