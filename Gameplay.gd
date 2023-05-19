@@ -2,8 +2,7 @@ extends Node2D
 
 @export var map_scene: PackedScene
 
-const open_tile_id = 3
-const wall_tile_id = 4
+var utils = preload("res://Utils.gd")
 
 var player
 var tile_map
@@ -42,9 +41,11 @@ func _process(delta):
     
     if Input.is_action_just_pressed("move_left"):
         target = Vector2i(-1, 0)
+        player.get_node('Sprite2D').flip_h = true
         proposed_action = true
     elif Input.is_action_just_pressed("move_right"):
         target = Vector2i(1, 0)
+        player.get_node('Sprite2D').flip_h = false
         proposed_action = true
     elif Input.is_action_just_pressed("move_up"):
         target = Vector2i(0, -1)
@@ -64,7 +65,7 @@ func _process(delta):
     var current = player.get_coords()
     var dst = current + target
     var dst_tile_id = tile_map.get_cell_source_id(0, dst)
-    if dst_tile_id == wall_tile_id:
+    if not utils.is_passable(dst_tile_id):
         return
     
     # See if any children want to prevent the movement.
@@ -89,8 +90,12 @@ func _process(delta):
     # Update automated children
     for child in get_map_objects():
         child.automatic_action(tile_map, dst)
-        
-    player.set_coords(dst)    
+
+    player.set_coords(dst)
+    
+    # Update world
+    if dst_tile_id == utils.CRACKED:
+        tile_map.set_cell(0, dst, -1)
     
     # Check win condition.
     var can_win = true

@@ -1,6 +1,8 @@
 class_name Chaser
 extends Enemy
 
+var utils = preload("res://Utils.gd")
+
 func automatic_action(map: Node, player_pos: Vector2i):
     var agent_pos = get_state()
     var distance_diff = player_pos - agent_pos
@@ -20,8 +22,7 @@ func automatic_action(map: Node, player_pos: Vector2i):
         dst = get_state() + target
         
         dst_tile_id = map.get_cell_source_id(0, dst)
-        # HX: Use constants
-        if dst_tile_id != 4:
+        if utils.is_passable(dst_tile_id):
             will_move = true
             
     if not will_move and distance_diff[1] != 0:
@@ -29,8 +30,7 @@ func automatic_action(map: Node, player_pos: Vector2i):
         dst = get_state() + target
         
         dst_tile_id = map.get_cell_source_id(0, dst)
-        # HX: Use constants
-        if dst_tile_id != 4:
+        if utils.is_passable(dst_tile_id):
             will_move = true
             
     if will_move:
