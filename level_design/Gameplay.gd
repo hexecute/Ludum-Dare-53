@@ -22,7 +22,14 @@ func get_map_objects():
         l.push_back(child)
     l.sort_custom(func(a, b): return a.get_precedence() < b.get_precedence())
     return l
-
+    
+func level_control(pausing, win):
+    var level_control = get_node("LevelControl")
+    level_control.pausing = pausing
+    level_control.win = win
+    level_control.show_ui()
+    get_tree().paused = true
+    
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     if Input.is_action_just_pressed("undo"):
@@ -60,8 +67,9 @@ func _process(delta):
     elif Input.is_action_just_pressed("pause"):
         proposed_action = allow_pause
     elif Input.is_action_just_pressed("ui_cancel"):
-        get_node("LevelControl").show()
-        get_tree().paused = true
+        level_control(true, false)
+    elif Input.is_action_just_pressed("restart_level"):
+        get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
     
     if !proposed_action:
         return
@@ -106,6 +114,8 @@ func _process(delta):
         can_lose = can_lose || child.can_lose()
         can_win = can_win && child.can_win()
     if can_lose:
+        level_control(false, false)
         print("YOU LOSE!")
     elif can_win:
+        level_control(false, true)
         print("YOU WIN!")
