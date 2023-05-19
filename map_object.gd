@@ -16,8 +16,8 @@ func can_lose():
     return false
 
 # Updates the state of this object and any objects it impacts,
-# given player movement to pos, and whether player is interacting on this step.
-func step(pos: Vector2i, interact: bool):
+# given player movement to pos.
+func step(pos: Vector2i):
     pass
     
 # Update the state of this object (for automated objects)

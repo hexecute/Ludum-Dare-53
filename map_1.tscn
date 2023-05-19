@@ -2,13 +2,13 @@
 
 [ext_resource type="TileSet" uid="uid://b1d4b5y6wx51x" path="res://map_1.tres" id="1_gmibu"]
 [ext_resource type="Script" path="res://Drone.gd" id="2_j0014"]
-[ext_resource type="PackedScene" uid="uid://d247njrawpg5o" path="res://chaser.tscn" id="2_xwjrn"]
+[ext_resource type="PackedScene" path="res://chaser.tscn" id="2_xwjrn"]
 [ext_resource type="PackedScene" uid="uid://bk2cfchsf83wt" path="res://door.tscn" id="3_fgv8i"]
 [ext_resource type="PackedScene" uid="uid://bh70bvbrq8uc7" path="res://player.tscn" id="3_l6d06"]
 [ext_resource type="PackedScene" uid="uid://enrba3mw36oo" path="res://button.tscn" id="4_cy1ip"]
 [ext_resource type="PackedScene" uid="uid://bhwxau62q4jox" path="res://package.tscn" id="5_c73kq"]
 [ext_resource type="PackedScene" uid="uid://bbsa4y6y1yxrt" path="res://goal.tscn" id="6_5jvlb"]
-[ext_resource type="PackedScene" uid="uid://dcqfnkiv8p2l7" path="res://drone.tscn" id="9_60gn3"]
+[ext_resource type="PackedScene" path="res://drone.tscn" id="9_60gn3"]
 
 [node name="Map1" type="TileMap"]
 position = Vector2(-87, -166)
@@ -33,9 +33,8 @@ offset = Vector2(-256, -256)
 [node name="Door1" parent="." instance=ExtResource("3_fgv8i")]
 position = Vector2(-576, 320)
 
-[node name="Button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_cy1ip")]
+[node name="Button" parent="." instance=ExtResource("4_cy1ip")]
 position = Vector2(448, 320)
-target = NodePath("../Door1")
 
 [node name="Package" parent="." node_paths=PackedStringArray("goal") instance=ExtResource("5_c73kq")]
 position = Vector2(-704, 320)

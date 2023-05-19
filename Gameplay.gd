@@ -38,7 +38,6 @@ func _process(delta):
     
     var proposed_action = false
     var target = Vector2i(0, 0)
-    var interact = false
     
     if Input.is_action_just_pressed("move_left"):
         target = Vector2i(-1, 0)
@@ -53,9 +52,6 @@ func _process(delta):
         target = Vector2i(0, 1)
         proposed_action = true
     elif Input.is_action_just_pressed("pause"):
-        proposed_action = true
-    elif Input.is_action_just_pressed("interact"):
-        interact = true
         proposed_action = true
     
     if !proposed_action:
@@ -82,9 +78,9 @@ func _process(delta):
         states[child.get_path()] = state
     stack.push_back(states)
     
-    # Update interactable children
+    # Update children.
     for child in get_map_objects():
-        child.step(dst, interact)
+        child.step(dst)
 
     # Update automated children
     for child in get_map_objects():

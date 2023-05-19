@@ -2,6 +2,6 @@ extends MapObject
 
 @export var target: Door
 
-func step(pos: Vector2i, interact: bool):
+func step(pos: Vector2i):
     if pos == get_coords():
         target.unlock()
