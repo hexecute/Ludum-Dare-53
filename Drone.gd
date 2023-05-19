@@ -1,17 +1,11 @@
 class_name Drone
 extends Enemy
 
+@export var behavior: Array[Vector2i]
+
 var utils = preload("res://Utils.gd")
 
 var i = 0
-var behavior = [
-    Vector2i(1, 0),
-    Vector2i(1, 0),
-    Vector2i(1, 0),
-    Vector2i(-1, 0),
-    Vector2i(-1, 0),
-    Vector2i(-1, 0),
-]
 
 func automatic_action(map: Node, player_pos: Vector2i):
     var agent_pos = get_state()

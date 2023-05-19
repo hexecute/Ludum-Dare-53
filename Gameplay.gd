@@ -1,7 +1,5 @@
 extends Node2D
 
-@export var map_scene: PackedScene
-
 var utils = preload("res://Utils.gd")
 
 var player
@@ -10,9 +8,9 @@ var stack = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    tile_map = map_scene.instantiate()
+    tile_map = self
     add_child(tile_map)
-    player = tile_map.get_node('Player')
+    player = get_node('Player')
     player.set_coords(Vector2i(0, 0))
 
 func get_map_objects():
