@@ -53,6 +53,9 @@ func _process(delta):
         proposed_action = true
     elif Input.is_action_just_pressed("pause"):
         proposed_action = true
+    elif Input.is_action_just_pressed("ui_cancel"):
+        get_node("LevelControl").show()
+        get_tree().paused = true
     
     if !proposed_action:
         return
