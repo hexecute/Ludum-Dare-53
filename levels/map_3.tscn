@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://6f2say8cyybk"]
+
+[ext_resource type="TileSet" uid="uid://b1d4b5y6wx51x" path="res://level_design/map_1.tres" id="1_4guwr"]
+[ext_resource type="Script" path="res://level_design/Gameplay.gd" id="2_pmxtj"]
+[ext_resource type="PackedScene" uid="uid://cpydtppvmkxsq" path="res://LevelControl.tscn" id="3_fkw5y"]
+[ext_resource type="PackedScene" uid="uid://bh70bvbrq8uc7" path="res://level_design/player.tscn" id="4_nx4kr"]
+[ext_resource type="PackedScene" uid="uid://bhwxau62q4jox" path="res://level_design/package.tscn" id="5_j61a7"]
+[ext_resource type="PackedScene" path="res://level_design/goal.tscn" id="6_jvlwb"]
+[ext_resource type="PackedScene" uid="uid://dcqfnkiv8p2l7" path="res://level_design/drone.tscn" id="7_02h3v"]
+
+[node name="Map3" type="TileMap"]
+position = Vector2(-127, -128)
+scale = Vector2(0.5, 0.5)
+tile_set = ExtResource("1_4guwr")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65541, 4, 0, -5, 5, 0, 65531, 5, 0, 131067, 5, 0, -65540, 5, 0, -4, 5, 0, 65532, 5, 0, 131068, 5, 0, -65539, 5, 0, 65533, 5, 0, 131069, 5, 0, -65538, 5, 0, -2, 5, 0, 65534, 5, 0, -1, 5, 0, 65535, 5, 0, -131072, 5, 0, -65536, 5, 0, 0, 5, 0, 65536, 5, 0, -131071, 5, 0, -65535, 5, 0, -131070, 4, 0, -65534, 5, 0, 65538, 5, 0, -131069, 5, 0, -65533, 5, 0, 3, 5, 0, 65539, 5, 0, -131068, 5, 0, -65532, 5, 0, 4, 5, 0, 65540, 5, 0, -65542, 4, 0, -6, 4, 0, 65530, 5, 0, 131066, 4, 0, 196602, 4, 0, 196603, 4, 0, 196604, 5, 0, 196605, 5, 0, 196606, 5, 0, 131072, 5, 0, 131073, 5, 0, 131074, 4, 0, 131075, 5, 0, 131076, 5, 0, -131067, 5, 0, -65531, 5, 0, 5, 3, 0, 65541, 5, 0, 131077, 5, 0, 196611, 5, 0, -196605, 5, 0, -196604, 5, 0, -262140, 5, 0, 196612, 5, 0, 262148, 5, 0, 196607, 5, 0, 65537, 5, 0, 1, 5, 0, 262138, 4, 0, 262139, 4, 0, 262140, 4, 0, 262141, 4, 0, 262142, 4, 0, 262143, 4, 0, 196608, 4, 0, 196609, 4, 0, 196610, 4, 0, 262147, 4, 0, 327684, 4, 0, 262149, 4, 0, 196613, 4, 0, 131078, 4, 0, 65542, 4, 0, 6, 4, 0, -65530, 4, 0, -131066, 4, 0, -196603, 4, 0, -262139, 4, 0, -327675, 4, 0, -327676, 4, 0, -327677, 4, 0, -262141, 4, 0, -196606, 4, 0, -262142, 4, 0, -196607, 4, 0, -131073, 4, 0, -196608, 4, 0, -131074, 4, 0, -131075, 4, 0, -131076, 4, 0, -131077, 4, 0, -131078, 4, 0, 262146, 4, 0, 327683, 4, 0, 327685, 4, 0, 196614, 4, 0, -196602, 4, 0)
+script = ExtResource("2_pmxtj")
+allow_pause = false
+
+[node name="LevelControl" parent="." instance=ExtResource("3_fkw5y")]
+
+[node name="Player" parent="." instance=ExtResource("4_nx4kr")]
+z_index = 1
+position = Vector2(-704, 64)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(538, 456)
+offset = Vector2(-256, -256)
+
+[node name="Package" parent="." node_paths=PackedStringArray("goal") instance=ExtResource("5_j61a7")]
+z_index = 2
+position = Vector2(192, -192)
+goal = NodePath("../Goal")
+
+[node name="Goal" parent="." instance=ExtResource("6_jvlwb")]
+position = Vector2(704, 64)
+
+[node name="Drone_1" parent="." instance=ExtResource("7_02h3v")]
+position = Vector2(-448, -192)
+behavior = Array[Vector2i]([Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, -1)])
+
+[node name="Drone_2" parent="." instance=ExtResource("7_02h3v")]
+position = Vector2(62, 320)
+behavior = Array[Vector2i]([Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, 1)])
+
+[node name="Drone_3" parent="." instance=ExtResource("7_02h3v")]
+position = Vector2(62, 64)
+behavior = Array[Vector2i]([Vector2i(-1, 0), Vector2i(-1, 0), Vector2i(-1, 0), Vector2i(1, 0), Vector2i(1, 0), Vector2i(1, 0)])
+
+[node name="Drone_4" parent="." instance=ExtResource("7_02h3v")]
+position = Vector2(446, -192)
+behavior = Array[Vector2i]([Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, -1), Vector2i(0, -1)])
+
+[node name="Drone_5" parent="." instance=ExtResource("7_02h3v")]
+position = Vector2(446, -320)
+behavior = Array[Vector2i]([Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, -1), Vector2i(0, -1)])
+
+[node name="Drone_6" parent="." instance=ExtResource("7_02h3v")]
+position = Vector2(446, 64)
+behavior = Array[Vector2i]([Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, -1), Vector2i(0, -1)])
+
+[node name="Drone_7" parent="." instance=ExtResource("7_02h3v")]
+position = Vector2(446, 192)
+behavior = Array[Vector2i]([Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, -1), Vector2i(0, -1)])
+
+[node name="Drone_8" parent="." instance=ExtResource("7_02h3v")]
+position = Vector2(574, -64)
+behavior = Array[Vector2i]([Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, 1)])
+
+[node name="Drone_9" parent="." instance=ExtResource("7_02h3v")]
+position = Vector2(574, -192)
+behavior = Array[Vector2i]([Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, 1)])
+
+[node name="Drone_10" parent="." instance=ExtResource("7_02h3v")]
+position = Vector2(574, 192)
+behavior = Array[Vector2i]([Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, 1)])
+
+[node name="Drone_11" parent="." instance=ExtResource("7_02h3v")]
+position = Vector2(574, 320)
+behavior = Array[Vector2i]([Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, -1), Vector2i(0, 1)])

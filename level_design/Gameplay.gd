@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var allow_pause : bool = true
+
 var utils = preload("res://level_design/Utils.gd")
 
 var player
@@ -51,7 +53,7 @@ func _process(delta):
         target = Vector2i(0, 1)
         proposed_action = true
     elif Input.is_action_just_pressed("pause"):
-        proposed_action = true
+        proposed_action = allow_pause
     elif Input.is_action_just_pressed("ui_cancel"):
         get_node("LevelControl").show()
         get_tree().paused = true
