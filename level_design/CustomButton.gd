@@ -1,3 +1,4 @@
+class_name CustomButton
 extends MapObject
 
 @export var target: Door

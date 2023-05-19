@@ -35,4 +35,3 @@ func automatic_action(map: Node, player_pos: Vector2i):
             
     if will_move:
         set_state(dst)
-    

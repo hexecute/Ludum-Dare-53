@@ -11,6 +11,9 @@ func get_state():
 
 func set_state(coords):
     set_coords(coords)
+    for child in tile_map.get_children():
+        if child is CustomButton:
+            child.step(coords)
 
 func can_lose():
     return get_coords() == tile_map.get_node('Player').get_coords()

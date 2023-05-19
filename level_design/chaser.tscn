@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://b5opmo7wospwx" path="res://assets/Microsoft_skull.png" id="2_km8op"]
 
 [node name="Chaser" type="Node2D"]
+z_index = 2
 script = ExtResource("1_gm7xa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
 rotation = 1.0472
 scale = Vector2(0.533, 0.533)
 texture = ExtResource("2_km8op")

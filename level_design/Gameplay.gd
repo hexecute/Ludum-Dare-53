@@ -33,6 +33,11 @@ func _process(delta):
         stack.pop_back()
         for node_path in states:
             get_node(node_path).set_state(states[node_path])
+            
+        # Reset Drone behavior
+        for child in tile_map.get_children():
+            if child is Drone:
+                child.i -= 1
         return
     
     var proposed_action = false
@@ -92,7 +97,7 @@ func _process(delta):
     
     # Update world
     if dst_tile_id == utils.CRACKED:
-        tile_map.set_cell(0, dst, -1)
+        tile_map.set_cell(0, dst, 3)
     
     # Check win condition.
     var can_win = true
