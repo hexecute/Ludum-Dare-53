@@ -141,9 +141,9 @@ text = "MAIN MENU
 
 [node name="Level0Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 204.0
+offset_left = 90.0
 offset_top = 397.0
-offset_right = 328.0
+offset_right = 214.0
 offset_bottom = 479.0
 theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -167,9 +167,9 @@ text = "0"
 
 [node name="Level1Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 397.0
+offset_left = 283.0
 offset_top = 398.0
-offset_right = 521.0
+offset_right = 407.0
 offset_bottom = 480.0
 theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -193,9 +193,9 @@ text = "1"
 
 [node name="Level2Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 590.0
+offset_left = 476.0
 offset_top = 396.0
-offset_right = 714.0
+offset_right = 600.0
 offset_bottom = 478.0
 theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -219,9 +219,9 @@ text = "2"
 
 [node name="Level3Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 776.0
+offset_left = 662.0
 offset_top = 398.0
-offset_right = 900.0
+offset_right = 786.0
 offset_bottom = 480.0
 theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -246,9 +246,9 @@ text = "3
 
 [node name="Level4Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 977.0
+offset_left = 863.0
 offset_top = 399.0
-offset_right = 1101.0
+offset_right = 987.0
 offset_bottom = 481.0
 theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -270,9 +270,36 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_bbpno")
 theme_override_styles/focus = SubResource("StyleBoxFlat_f54cj")
 text = "4"
 
+[node name="Level5Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1055.0
+offset_top = 399.0
+offset_right = 1179.0
+offset_bottom = 481.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.270588, 0.313726, 0.364706, 0.752941)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.243137, 0.243137, 0.243137, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_5e0fk")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_6xkn6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_is4ya")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8voj4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_bbpno")
+theme_override_styles/focus = SubResource("StyleBoxFlat_f54cj")
+text = "5"
+
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="Level0Button" to="." method="_on_level_0_button_pressed"]
 [connection signal="pressed" from="Level1Button" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="Level2Button" to="." method="_on_level_2_button_pressed"]
 [connection signal="pressed" from="Level3Button" to="." method="_on_level_3_button_pressed"]
 [connection signal="pressed" from="Level4Button" to="." method="_on_level_4_button_pressed"]
+[connection signal="pressed" from="Level5Button" to="." method="_on_level_5_button_pressed"]
