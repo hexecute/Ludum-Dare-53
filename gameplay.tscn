@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://xs1xjnn2wngx"]
-
-[ext_resource type="Script" path="res://Gameplay.gd" id="1_16ftn"]
-[ext_resource type="PackedScene" uid="uid://cpydtppvmkxsq" path="res://LevelControl.tscn" id="2_vg6ll"]
-
-[node name="Gameplay" type="Node2D"]
-script = ExtResource("1_16ftn")
-
-[node name="LevelControl" parent="." instance=ExtResource("2_vg6ll")]
