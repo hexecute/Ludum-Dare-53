@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cpydtppvmkxsq" path="res://LevelControl.tscn" id="3_oy2s7"]
 [ext_resource type="PackedScene" uid="uid://bh70bvbrq8uc7" path="res://level_design/player.tscn" id="5_oylnt"]
 [ext_resource type="PackedScene" uid="uid://bhwxau62q4jox" path="res://level_design/package.tscn" id="8_0dswo"]
-[ext_resource type="PackedScene" path="res://level_design/goal.tscn" id="9_gihjw"]
+[ext_resource type="PackedScene" uid="uid://psjbvtldv108" path="res://level_design/goal.tscn" id="9_gihjw"]
 [ext_resource type="PackedScene" uid="uid://dcqfnkiv8p2l7" path="res://level_design/drone.tscn" id="10_w1xig"]
 
 [node name="Map2" type="TileMap"]
