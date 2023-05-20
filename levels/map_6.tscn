@@ -31,7 +31,7 @@ position = Vector2(538, 456)
 offset = Vector2(-256, -256)
 
 [node name="Package" parent="." node_paths=PackedStringArray("goal") instance=ExtResource("6_bigud")]
-z_index = 2
+z_index = 3
 position = Vector2(446, -64)
 goal = NodePath("../Goal")
 
