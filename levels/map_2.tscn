@@ -21,7 +21,7 @@ allow_pause = false
 
 [node name="Player" parent="." instance=ExtResource("5_oylnt")]
 z_index = 1
-position = Vector2(-704, 64)
+position = Vector2(-578, 64)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(574, 576)
